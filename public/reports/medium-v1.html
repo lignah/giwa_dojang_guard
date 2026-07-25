@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dojang Guard Audit Report — AMM v2 (v1.0)</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1220; --card:#121a2b; --text:#e8eef8; --muted:#8b9bb4; --warn:#fbbf24; --line:#243049; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
+    main { max-width:720px; margin:0 auto; padding:2rem 1.25rem 4rem; }
+    h1 { font-size:1.4rem; margin:0 0 .25rem; }
+    h2 { font-size:1rem; margin:1.75rem 0 .6rem; color:#a5f3fc; }
+    .sub { color:var(--muted); font-size:.9rem; margin-bottom:1.25rem; }
+    .badge { display:inline-block; padding:.2rem .6rem; border-radius:999px; background:rgba(251,191,36,.12); color:var(--warn); font-size:.75rem; font-weight:600; border:1px solid rgba(251,191,36,.35); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1rem 1.1rem; margin:.75rem 0; }
+    table { width:100%; border-collapse:collapse; font-size:.9rem; }
+    th, td { text-align:left; padding:.45rem .3rem; border-bottom:1px solid var(--line); }
+    th { color:var(--muted); font-weight:500; width:38%; }
+    ul { margin:.4rem 0; padding-left:1.2rem; color:#d5deec; }
+    footer { margin-top:2rem; font-size:.75rem; color:var(--muted); }
+    code { font-size:.8rem; color:#99f6e4; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="badge">PASSED · Medium residual risk</span>
+    <h1>Security Audit Report — AMM v2 Demo</h1>
+    <p class="sub">Dojang Guard · Schema v1.0 · GIWA Sepolia mock audit for demo</p>
+
+    <div class="card">
+      <table>
+        <tr><th>Target</th><td><code>0x2222222222222222222222222222222222222222</code></td></tr>
+        <tr><th>Auditor</th><td>Dojang Guard Auditor<br/><code>0xa59C77f05A10719a374b7667DAbcfd2f9b1C2549</code></td></tr>
+        <tr><th>Score</th><td><strong>78 / 100</strong></td></tr>
+        <tr><th>Risk level</th><td>Medium</td></tr>
+        <tr><th>Result</th><td>Passed (with recommendations)</td></tr>
+        <tr><th>Version</th><td>v1.0</td></tr>
+      </table>
+    </div>
+
+    <h2>1. Scope</h2>
+    <p>데모용 AMM v2 스타일 풀/스왑 로직. 수수료·가격 경로·권한 모델을 중심으로 한 가상 감사입니다.</p>
+
+    <h2>2. Score breakdown (rubric v1.0)</h2>
+    <div class="card">
+      <table>
+        <tr><th>A. Critical 취약점 ( /35 )</th><td>28</td></tr>
+        <tr><th>B. 접근제어·권한 ( /20 )</th><td>16</td></tr>
+        <tr><th>C. 경제·로직 ( /20 )</th><td>14</td></tr>
+        <tr><th>D. 운영·업그레이드 ( /15 )</th><td>12</td></tr>
+        <tr><th>E. 엔지니어링 품질 ( /10 )</th><td>8</td></tr>
+        <tr><th>Total</th><td><strong>78</strong></td></tr>
+      </table>
+    </div>
+
+    <h2>3. Findings</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Critical:</strong> 없음</li>
+        <li><strong>High:</strong> 없음</li>
+        <li><strong>Medium:</strong> 극단 유동성 구간에서 슬리피지/가격 영향이 커질 수 있음 → UI 한도·경고 권고</li>
+        <li><strong>Medium:</strong> 수수료 수령 주소 변경에 대한 지연(timelock) 미흡 → 운영 리스크</li>
+        <li><strong>Low:</strong> 테스트 커버리지 보강 권고</li>
+      </ul>
+    </div>
+
+    <h2>4. Conclusion</h2>
+    <p>치명 이슈 없이 <strong>조건부 통과</strong>입니다. 운영 시 한도·timelock 권고를 반영하세요. 뱃지 정책상 Medium + 78점이므로 <strong>GIWA Verified Secure 대상</strong>입니다.</p>
+
+    <footer>
+      Demo report for Dojang Guard (GASOK MVP). Not a substitute for a full professional audit of production code.
+    </footer>
+  </main>
+</body>
+</html>

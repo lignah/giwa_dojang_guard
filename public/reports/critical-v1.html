@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dojang Guard Audit Report — Broken Token (v1.0)</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1220; --card:#121a2b; --text:#e8eef8; --muted:#8b9bb4; --bad:#fb7185; --line:#243049; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
+    main { max-width:720px; margin:0 auto; padding:2rem 1.25rem 4rem; }
+    h1 { font-size:1.4rem; margin:0 0 .25rem; }
+    h2 { font-size:1rem; margin:1.75rem 0 .6rem; color:#fda4af; }
+    .sub { color:var(--muted); font-size:.9rem; margin-bottom:1.25rem; }
+    .badge { display:inline-block; padding:.2rem .6rem; border-radius:999px; background:rgba(251,113,133,.12); color:var(--bad); font-size:.75rem; font-weight:600; border:1px solid rgba(251,113,133,.4); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1rem 1.1rem; margin:.75rem 0; }
+    table { width:100%; border-collapse:collapse; font-size:.9rem; }
+    th, td { text-align:left; padding:.45rem .3rem; border-bottom:1px solid var(--line); }
+    th { color:var(--muted); font-weight:500; width:38%; }
+    ul { margin:.4rem 0; padding-left:1.2rem; color:#d5deec; }
+    footer { margin-top:2rem; font-size:.75rem; color:var(--muted); }
+    code { font-size:.8rem; color:#99f6e4; }
+    .alert { border-color:rgba(251,113,133,.35); background:rgba(251,113,133,.08); }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="badge">FAILED · Not badge-eligible</span>
+    <h1>Security Audit Report — Broken Token Demo</h1>
+    <p class="sub">Dojang Guard · Schema v1.0 · GIWA Sepolia mock audit for demo</p>
+
+    <div class="card alert">
+      <table>
+        <tr><th>Target</th><td><code>0x3333333333333333333333333333333333333333</code></td></tr>
+        <tr><th>Auditor</th><td>Dojang Guard Auditor<br/><code>0xa59C77f05A10719a374b7667DAbcfd2f9b1C2549</code></td></tr>
+        <tr><th>Score</th><td><strong>34 / 100</strong></td></tr>
+        <tr><th>Risk level</th><td>Critical</td></tr>
+        <tr><th>Result</th><td>Failed — do not deploy / do not use</td></tr>
+        <tr><th>Version</th><td>v1.0</td></tr>
+      </table>
+    </div>
+
+    <h2>1. Scope</h2>
+    <p>데모용 Broken Token. 민팅·권한 모델에 치명 결함이 있는 시나리오를 보여 주기 위한 가상 대상입니다.</p>
+
+    <h2>2. Score breakdown (rubric v1.0)</h2>
+    <div class="card">
+      <table>
+        <tr><th>A. Critical 취약점 ( /35 )</th><td>5</td></tr>
+        <tr><th>B. 접근제어·권한 ( /20 )</th><td>6</td></tr>
+        <tr><th>C. 경제·로직 ( /20 )</th><td>8</td></tr>
+        <tr><th>D. 운영·업그레이드 ( /15 )</th><td>7</td></tr>
+        <tr><th>E. 엔지니어링 품질 ( /10 )</th><td>8</td></tr>
+        <tr><th>Total</th><td><strong>34</strong></td></tr>
+      </table>
+    </div>
+
+    <h2>3. Findings</h2>
+    <div class="card alert">
+      <ul>
+        <li><strong>Critical:</strong> 제한 없는 <code>mint</code> 경로 — 공급량 조작 및 가치 희석 가능</li>
+        <li><strong>Critical:</strong> owner 단일 키로 즉시 권한 이전·동결 가능, 사용자 자산 위험</li>
+        <li><strong>High:</strong> 표준 인터페이스와 불일치하는 transfer 동작 가정 (호환성 이슈)</li>
+        <li>위 이슈가 해결되기 전에는 <strong>통과 판정 불가</strong></li>
+      </ul>
+    </div>
+
+    <h2>4. Conclusion</h2>
+    <p><strong>실패(Failed)</strong>. GIWA Verified Secure 뱃지 대상이 아닙니다. 프로덕션 사용을 권장하지 않으며, 온체인 attestation도 <code>isPassed=false</code> 로 기록됩니다.</p>
+
+    <footer>
+      Demo report for Dojang Guard (GASOK MVP). Illustrates a failing audit and missing badge case.
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dojang Guard Audit Report — Safe Vault (v1.0)</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1220; --card:#121a2b; --text:#e8eef8; --muted:#8b9bb4; --ok:#34d399; --line:#243049; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
+    main { max-width:720px; margin:0 auto; padding:2rem 1.25rem 4rem; }
+    h1 { font-size:1.4rem; margin:0 0 .25rem; }
+    h2 { font-size:1rem; margin:1.75rem 0 .6rem; color:#a5f3fc; }
+    .sub { color:var(--muted); font-size:.9rem; margin-bottom:1.25rem; }
+    .badge { display:inline-block; padding:.2rem .6rem; border-radius:999px; background:rgba(52,211,153,.15); color:var(--ok); font-size:.75rem; font-weight:600; border:1px solid rgba(52,211,153,.35); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1rem 1.1rem; margin:.75rem 0; }
+    table { width:100%; border-collapse:collapse; font-size:.9rem; }
+    th, td { text-align:left; padding:.45rem .3rem; border-bottom:1px solid var(--line); }
+    th { color:var(--muted); font-weight:500; width:38%; }
+    ul { margin:.4rem 0; padding-left:1.2rem; color:#d5deec; }
+    footer { margin-top:2rem; font-size:.75rem; color:var(--muted); }
+    code { font-size:.8rem; color:#99f6e4; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="badge">PASSED · GIWA Verified Secure eligible</span>
+    <h1>Security Audit Report — Safe Vault Demo</h1>
+    <p class="sub">Dojang Guard · Schema v1.0 · GIWA Sepolia mock audit for demo</p>
+
+    <div class="card">
+      <table>
+        <tr><th>Target</th><td><code>0x1111111111111111111111111111111111111111</code></td></tr>
+        <tr><th>Auditor</th><td>Dojang Guard Auditor<br/><code>0xa59C77f05A10719a374b7667DAbcfd2f9b1C2549</code></td></tr>
+        <tr><th>Score</th><td><strong>92 / 100</strong></td></tr>
+        <tr><th>Risk level</th><td>Low</td></tr>
+        <tr><th>Result</th><td>Passed</td></tr>
+        <tr><th>Version</th><td>v1.0</td></tr>
+      </table>
+    </div>
+
+    <h2>1. Scope</h2>
+    <p>데모용 Safe Vault 컨트랙트 패턴 검토. 실제 프로덕션 코드가 아닌 GASOK MVP 시나리오용 가상 대상입니다.</p>
+
+    <h2>2. Score breakdown (rubric v1.0)</h2>
+    <div class="card">
+      <table>
+        <tr><th>A. Critical 취약점 ( /35 )</th><td>33</td></tr>
+        <tr><th>B. 접근제어·권한 ( /20 )</th><td>18</td></tr>
+        <tr><th>C. 경제·로직 ( /20 )</th><td>18</td></tr>
+        <tr><th>D. 운영·업그레이드 ( /15 )</th><td>13</td></tr>
+        <tr><th>E. 엔지니어링 품질 ( /10 )</th><td>10</td></tr>
+        <tr><th>Total</th><td><strong>92</strong></td></tr>
+      </table>
+    </div>
+
+    <h2>3. Findings</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Critical / High:</strong> 없음</li>
+        <li><strong>Medium:</strong> 없음</li>
+        <li><strong>Low:</strong> 이벤트 인덱싱 개선 권고 (정보성)</li>
+        <li>권한: multisig + timelock 패턴 가정, 단일 EOA 즉시 업그레이드 없음</li>
+      </ul>
+    </div>
+
+    <h2>4. Conclusion</h2>
+    <p>잔여 이슈는 정보성 Low 수준입니다. <strong>배포·사용 관점에서 통과</strong>하며, Dojang Guard 뱃지 정책(통과 · 점수≥70 · Low/Medium)을 충족합니다.</p>
+
+    <footer>
+      This report is a short demo artifact for Dojang Guard (GASOK MVP).<br/>
+      On-chain summary is committed via EAS; this page is the human-readable <code>reportURI</code> target.
+    </footer>
+  </main>
+</body>
+</html>

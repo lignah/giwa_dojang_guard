@@ -1,0 +1,56 @@
+{
+  "schemaUID": "0xc3e8a7c6b39ab5e28892138c8abe0c68a7085a2e66474dbef7acc5ed23dd171d",
+  "chainId": 91342,
+  "attester": "0xa59C77f05A10719a374b7667DAbcfd2f9b1C2549",
+  "issuedAt": "2026-07-25T15:58:52.069Z",
+  "attestations": [
+    {
+      "uid": "0xb6c79a06899a40d3f712e626cbb2cfa22ebad7113c38e5722e37f2ad1f66a6d9",
+      "txHash": "0x2e2e85049ab8038d8a667c03a714a936cef7be102a7806fddf20e1450351b863",
+      "recipient": "0x1111111111111111111111111111111111111111",
+      "data": {
+        "contractAddress": "0x1111111111111111111111111111111111111111",
+        "auditor": "0xa59C77f05A10719a374b7667DAbcfd2f9b1C2549",
+        "auditorName": "Dojang Guard Auditor",
+        "score": 92,
+        "riskLevel": "Low",
+        "isPassed": true,
+        "reportURI": "https://cdn.jsdelivr.net/gh/lignah/giwa_dojang_guard@main/public/reports/safe-v1.html",
+        "auditedAt": "1784908727",
+        "version": "v1.0"
+      }
+    },
+    {
+      "uid": "0xb44f5db4083b79f7cb55d17cc458aa29b09e4022d2cd0877096683c513504758",
+      "txHash": "0x0186e98b6276316902db62e8672bb079134300c8faed122ad08d7579fc412925",
+      "recipient": "0x2222222222222222222222222222222222222222",
+      "data": {
+        "contractAddress": "0x2222222222222222222222222222222222222222",
+        "auditor": "0xa59C77f05A10719a374b7667DAbcfd2f9b1C2549",
+        "auditorName": "Dojang Guard Auditor",
+        "score": 78,
+        "riskLevel": "Medium",
+        "isPassed": true,
+        "reportURI": "https://cdn.jsdelivr.net/gh/lignah/giwa_dojang_guard@main/public/reports/medium-v1.html",
+        "auditedAt": "1784991527",
+        "version": "v1.0"
+      }
+    },
+    {
+      "uid": "0xe7bd238521dd499105539e8323bc1a5c50ab9f507f4a37bcf7ac3d9ee3e39534",
+      "txHash": "0xd124a0e8f7e2c5fa3c6b8a8db158ec2062656c3d45258ffa297dc37caa78db06",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "data": {
+        "contractAddress": "0x3333333333333333333333333333333333333333",
+        "auditor": "0xa59C77f05A10719a374b7667DAbcfd2f9b1C2549",
+        "auditorName": "Dojang Guard Auditor",
+        "score": 34,
+        "riskLevel": "Critical",
+        "isPassed": false,
+        "reportURI": "https://cdn.jsdelivr.net/gh/lignah/giwa_dojang_guard@main/public/reports/critical-v1.html",
+        "auditedAt": "1784987927",
+        "version": "v1.0"
+      }
+    }
+  ]
+}

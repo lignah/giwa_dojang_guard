@@ -1,0 +1,10 @@
+{
+  "schemaUID": "0xc3e8a7c6b39ab5e28892138c8abe0c68a7085a2e66474dbef7acc5ed23dd171d",
+  "schema": "address contractAddress,address auditor,string auditorName,uint8 score,string riskLevel,bool isPassed,string reportURI,uint64 auditedAt,string version",
+  "resolver": "0x0000000000000000000000000000000000000000",
+  "revocable": true,
+  "txHash": "0x98cd936cdd2612bba1685ca7784b98dc9ca48de6e9451fe0f9ac28109c5316d1",
+  "registeredAt": "2026-07-25T13:40:49.038Z",
+  "chainId": 91342,
+  "registerer": "0xa59C77f05A10719a374b7667DAbcfd2f9b1C2549"
+}
